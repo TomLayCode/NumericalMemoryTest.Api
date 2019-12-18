@@ -27,8 +27,27 @@ namespace NumericalMemoryTest.Infrastructure.Services
         #region Helpers
         public int GenerateNumber(int iterantion)
         {
+            int number = 0;
+            if (iterantion % 2 != 0) { iterantion = iterantion + 1; }
+            for (var i = 0; i < iterantion; i++)
+            {
+                if (number == 0) 
+                {
+                    number = GenerateDigit();
+                }
+                else
+                {
+                    number = int.Parse(number.ToString() + GenerateDigit().ToString());
+                }  
+            }
+
+            return number;
+        }
+
+        public int GenerateDigit()
+        {
             Random rnd = new Random();
-            int month = rnd.Next(1, 13);
+            return rnd.Next(1, 9);
         }
         #endregion
     }
