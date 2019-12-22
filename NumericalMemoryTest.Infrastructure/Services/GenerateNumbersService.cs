@@ -16,7 +16,7 @@ namespace NumericalMemoryTest.Infrastructure.Services
         public IList<int> GenerateNumbers()
         {
             var numbers = new List<int>();
-            for (var i = 0; i < (_settings.TestLength/3); i++)
+            for (var i = 1; i < (_settings.TestLength/3)+1; i++)
             {
                 numbers.Add(GenerateNumber(i));
             }
@@ -25,11 +25,11 @@ namespace NumericalMemoryTest.Infrastructure.Services
         }
 
         #region Helpers
-        public int GenerateNumber(int iterantion)
+        private int GenerateNumber(int iterantion)
         {
             int number = 0;
             if (iterantion % 2 != 0) { iterantion = iterantion + 1; }
-            for (var i = 0; i < iterantion; i++)
+            for (var i = 0; (i < iterantion/2) && (i < 9); i++)
             {
                 if (number == 0) 
                 {
@@ -44,10 +44,10 @@ namespace NumericalMemoryTest.Infrastructure.Services
             return number;
         }
 
-        public int GenerateDigit()
+        private int GenerateDigit()
         {
             Random rnd = new Random();
-            return rnd.Next(1, 9);
+            return rnd.Next(1, 10);
         }
         #endregion
     }

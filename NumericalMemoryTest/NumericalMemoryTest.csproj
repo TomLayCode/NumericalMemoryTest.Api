@@ -15,6 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Nancy" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,8 @@
   <ItemGroup>
     <ProjectReference Include="..\NumericalMemoryTest.Application\NumericalMemoryTest.Application.csproj" />
     <ProjectReference Include="..\NumericalMemoryTest.Domain\NumericalMemoryTest.Domain.csproj" />
+    <ProjectReference Include="..\NumericalMemoryTest.Infrastructure\NumericalMemoryTest.Infrastructure.csproj" />
+    <ProjectReference Include="..\NumericalMemoryTest.Persistence\NumericalMemoryTest.Persistence.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

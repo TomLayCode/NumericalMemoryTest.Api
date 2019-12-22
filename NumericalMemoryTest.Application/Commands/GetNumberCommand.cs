@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using NumericalMemoryTest.Domain.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,13 +16,15 @@ namespace NumericalMemoryTest.Application.Commands
         }
         public class Handler : IRequestHandler<Command, IList<int>>
         {
-            public Handler()
+            IGenerateNumbersService _generateNumbersService;
+            public Handler(IGenerateNumbersService generateNumbersService)
             {
-
+                _generateNumbersService = generateNumbersService;
             }
+
             public async Task<IList<int>> Handle(Command request, CancellationToken cancellationToken)
             {
-                throw new NotImplementedException();
+                return _generateNumbersService.GenerateNumbers();
             }
         }
     }

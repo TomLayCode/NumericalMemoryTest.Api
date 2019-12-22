@@ -8,6 +8,11 @@ using Microsoft.Extensions.Hosting;
 using System.Reflection;
 using MediatR;
 using NumericalMemoryTest.Application.Commands;
+using NumericalMemoryTest.Domain.Abstractions;
+using NumericalMemoryTest.Infrastructure.Services;
+using NumericalMemoryTest.Infrastructure.Configuration;
+using Microsoft.AspNetCore.Hosting;
+using NumericalMemoryTest.Persistence;
 
 namespace NumericalMemoryTest
 {
@@ -26,6 +31,10 @@ namespace NumericalMemoryTest
 
             services.AddControllersWithViews();
             services.AddMediatR(typeof(Startup), typeof(GetNumberCommand));
+            services.Add(new ServiceDescriptor(typeof(NumericalMemoryContext), new NumericalMemoryContext(Configuration.GetConnectionString("DefaultConnection"))));
+
+            services.AddSingleton<IGenerateNumbersService, GenerateNumbersService>();
+            services.AddSingleton<Settings>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
