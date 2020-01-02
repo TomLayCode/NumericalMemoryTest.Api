@@ -7,7 +7,7 @@ using System.Text;
 
 namespace NumericalMemoryTest.Persistence.Queries
 {
-    class AddDataQuery : ISaveDataQuery
+    public class AddDataQuery : ISaveDataQuery
     {
         private readonly NumericalMemoryContext _context;
         public AddDataQuery(NumericalMemoryContext context)
@@ -22,7 +22,10 @@ namespace NumericalMemoryTest.Persistence.Queries
                 using (var conn = _context.GetConnection())
                 {
                     conn.Open();
-                    MySqlCommand cmd = new MySqlCommand($"select * from Result where id = {UserId}", conn);//TODO: Sql command
+                    MySqlCommand cmd = new MySqlCommand(
+                        $"INSERT INTO Result " +
+                        $"(UserId, Score, NumberCorrect, NumberIncorrect) " +
+                        $"VALUES({result.UserId}, {result.Score}, {result.NumberCorrect}, {result.NumberIncorrect})", conn);
                 }
                 return true;
             }

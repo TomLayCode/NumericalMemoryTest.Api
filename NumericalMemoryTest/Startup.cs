@@ -13,6 +13,8 @@ using NumericalMemoryTest.Infrastructure.Services;
 using NumericalMemoryTest.Infrastructure.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using NumericalMemoryTest.Persistence;
+using NumericalMemoryTest.Persistence.Abstractions;
+using NumericalMemoryTest.Persistence.Queries;
 
 namespace NumericalMemoryTest
 {
@@ -30,10 +32,12 @@ namespace NumericalMemoryTest
         {
 
             services.AddControllersWithViews();
-            services.AddMediatR(typeof(Startup), typeof(GetNumberCommand));
+            services.AddMediatR(typeof(Startup), typeof(GetNumberCommand), typeof(SaveResultCommand));
             services.Add(new ServiceDescriptor(typeof(NumericalMemoryContext), new NumericalMemoryContext(Configuration.GetConnectionString("DefaultConnection"))));
 
             services.AddSingleton<IGenerateNumbersService, GenerateNumbersService>();
+            services.AddSingleton<IGetDataQuery, GetDataQuery>();
+            services.AddSingleton<ISaveDataQuery, AddDataQuery>();
             services.AddSingleton<Settings>();
 
             // In production, the React files will be served from this directory

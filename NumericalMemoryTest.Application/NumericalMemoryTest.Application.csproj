@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NumericalMemoryTest.Domain\NumericalMemoryTest.Domain.csproj" />
+    <ProjectReference Include="..\NumericalMemoryTest.Infrastructure\NumericalMemoryTest.Infrastructure.csproj" />
+    <ProjectReference Include="..\NumericalMemoryTest.Persistence\NumericalMemoryTest.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

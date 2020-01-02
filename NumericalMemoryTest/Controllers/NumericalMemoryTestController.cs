@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Nancy.Json;
 using NumericalMemoryTest.Application.Commands;
 using NumericalMemoryTest.Infrastructure.Configuration;
+using NumericalMemoryTest.Infrastructure.Models;
 
 namespace NumericalMemoryTest.Controllers
 {
@@ -29,6 +30,14 @@ namespace NumericalMemoryTest.Controllers
         public async Task<string> GetSettings()
         {
             return new JavaScriptSerializer().Serialize(new Settings());
+        }
+        #endregion
+
+        #region POST
+        [HttpPost("SubmitResults")]
+        public async Task SubmitResults([FromBody]Result results)
+        {
+            await _mediator.Send(new SaveResultCommand.Command(results));
         }
         #endregion
     }

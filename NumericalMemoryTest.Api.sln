@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumericalMemoryTest.Infrast
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumericalMemoryTest.Persistence", "NumericalMemoryTest.Persistence\NumericalMemoryTest.Persistence.csproj", "{9091E10E-37A0-4817-BE77-2F3C5FA70AE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumericalMemoryTest.UnitTests", "NumericalMemoryTest.UnitTests\NumericalMemoryTest.UnitTests.csproj", "{84409E37-8722-4009-921D-748D3669E620}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMemoryTest", "NumericalMemoryTest\NumericalMemoryTest.csproj", "{8CF7C191-2FF3-48DD-9ABA-34834E45E965}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumericalMemoryTest", "NumericalMemoryTest\NumericalMemoryTest.csproj", "{8CF7C191-2FF3-48DD-9ABA-34834E45E965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{9091E10E-37A0-4817-BE77-2F3C5FA70AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9091E10E-37A0-4817-BE77-2F3C5FA70AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9091E10E-37A0-4817-BE77-2F3C5FA70AE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84409E37-8722-4009-921D-748D3669E620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84409E37-8722-4009-921D-748D3669E620}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84409E37-8722-4009-921D-748D3669E620}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84409E37-8722-4009-921D-748D3669E620}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8CF7C191-2FF3-48DD-9ABA-34834E45E965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8CF7C191-2FF3-48DD-9ABA-34834E45E965}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CF7C191-2FF3-48DD-9ABA-34834E45E965}.Release|Any CPU.ActiveCfg = Release|Any CPU
